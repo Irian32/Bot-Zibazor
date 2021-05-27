@@ -22,8 +22,8 @@ async def owner_find(ctx):
 
 @bot.command(name="Officiers")
 async def officers_find(ctx):
-    role = get(ctx.guild.roles, name="Officier")
-    for m in role.members:
-        await ctx.send(f'{m.mention}')
+    officers = get(ctx.guild.roles, name="Officier")
+    for officer in officers.members:
+        await ctx.send(f'{officer.mention}')
 
 bot.run(my_secret)
