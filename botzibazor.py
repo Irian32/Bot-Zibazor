@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-from cogs import info_requests
+from cogs.cogs import info_requests
 
 class Botzibazor:
 
@@ -10,7 +10,7 @@ class Botzibazor:
         self.intents.members = True
         self.command_manager = commands.Bot(command_prefix='!', intents=self.intents) 
 
-        # Loads cogs (command interpreter and bot listener)
+        # Load cogs (command interpreter and bot listener)
         self.command_manager.add_cog(info_requests(self.command_manager))
 
         # On connect event 
