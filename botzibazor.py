@@ -1,3 +1,4 @@
+import logging
 import discord
 from discord.ext import commands
 from cogs.cogs import info_requests
@@ -16,8 +17,7 @@ class Botzibazor:
         # On connect event 
         @self.command_manager.event
         async def on_ready():
-            print(f'{self.command_manager.user.name} has connected to Discord')
-
+            logging.info(f'{self.command_manager.user.name} has connected to Discord')
 
     def start(self):
         self.command_manager.run(self._token)

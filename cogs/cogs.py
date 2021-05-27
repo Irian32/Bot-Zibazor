@@ -16,3 +16,4 @@ class info_requests(commands.Cog):
         for officer in officers.members:
             await ctx.send(f'{officer.mention}')
 
+
