@@ -1,29 +1,10 @@
-from discord.ext import commands
-from discord.utils import get
-
-import discord
+from botzibazor import Botzibazor
 import os
 
-my_secret = os.environ['TOKEN']
+token_bazibazor_prod = os.environ['TOKEN_PROD']
+token_bazibazot_test = os.environ['TOKEN_TEST']
 
-intents= discord.Intents.default()
-intents.members = True
+botzibazor = Botzibazor(token_bazibazor_prod)
+botzibazor.start()
 
-bot = commands.Bot(command_prefix='!', intents=intents)
 
-@bot.event
-async def on_ready():
-    print(f'{bot.user.name} has connected to Discord')
-
-@bot.command(name='Chef')
-async def owner_find(ctx):
-    guild_owner = bot.get_user(int(ctx.guild.owner.id))
-    await ctx.send(f'Le chef est : {guild_owner.mention}')
-
-@bot.command(name="Officiers")
-async def officers_find(ctx):
-    officers = get(ctx.guild.roles, name="Officier")
-    for officer in officers.members:
-        await ctx.send(f'{officer.mention}')
-
-bot.run(my_secret)
