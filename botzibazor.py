@@ -1,7 +1,8 @@
 import logging
 import discord
 from discord.ext import commands
-from cogs.cogs import info_requests
+from cogs.info_requests import info_requests
+from cogs.quote_requests import quote_requests
 
 class Botzibazor:
 
@@ -13,6 +14,7 @@ class Botzibazor:
 
         # Load cogs (command interpreter and bot listener)
         self.command_manager.add_cog(info_requests(self.command_manager))
+        self.command_manager.add_cog(quote_requests(self.command_manager))
 
         # On connect event 
         @self.command_manager.event
