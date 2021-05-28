@@ -10,3 +10,13 @@
 
 https://www.freecodecamp.org/news/create-a-discord-bot-with-python/
 https://discordpy.readthedocs.io/en/stable/ext/commands/index.html
+
+=== Dev guidelines ===
+
+- Use the channel bot_testing on discord for testing.  
+- As possible : 1 feature = 1 branch (ex : dev-quote-request)
+
+=== TroubleShooting ===
+
+
+

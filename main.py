@@ -4,7 +4,6 @@ import logging
 import os
 
 token_bazibazor_prod = os.environ['TOKEN_PROD']
-token_bazibazot_test = os.environ['TOKEN_TEST']
 
 def main():
 
@@ -16,4 +15,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
