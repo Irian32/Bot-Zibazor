@@ -8,17 +8,25 @@ class kill_marry_fuck(commands.Cog):
     @commands.command(name='kmf')
     async def kmf_request(self, ctx):
 
-        await ctx.send('Kill / Marry / Fuck entre :')
-        users = ctx.guild.members
-        user1 = random.choice(users)
-        users.remove(user1)
-        user2 = random.choice(users)
-        users.remove(user2)
-        user3 = random.choice(users)
-        users.remove(user3)
+        f = open("data/kmf.txt", "r")
+        names = f.read().split("\n")
+        f.close()
 
-        await ctx.send(f"{user1.name}, {user2.name}, {user3.name}")
+        await ctx.send('Kill / Marry / Fuck entre :')
+        user1 = random.choice(names)
+        names.remove(user1)
+        user2 = random.choice(names)
+        names.remove(user2)
+        user3 = random.choice(names)
+        names.remove(user3)
+
+        await ctx.send(f"{user1}, {user2}, {user3}")
 
     @commands.command(name="rand")
     async def rand_request(self, ctx):
-        await ctx.send(f"{random.choice(ctx.guild.members).name}")
+        f = open("data/kmf.txt", "r")
+        names = f.read().split("\n")
+        f.close()
+        await ctx.send(f"{random.choice(names)}")
+
+    
