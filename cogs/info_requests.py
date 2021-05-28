@@ -15,6 +15,3 @@ class info_requests(commands.Cog):
         officers = get(ctx.guild.roles, name="Officier")
         for officer in officers.members:
             await ctx.send(f'{officer.mention}')
-
-            
-
